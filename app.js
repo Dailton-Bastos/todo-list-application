@@ -8,6 +8,7 @@ require("./config/database");
 
 // Middlewares
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Configurando arquivos html staticos
 app.use(express.static(path.join(__dirname, "public")));
