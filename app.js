@@ -9,6 +9,10 @@ require("./config/database");
 // Middlewares
 app.use(express.json());
 
+// Configurando arquivos html staticos
+app.use(express.static(path.join(__dirname, "public")));
+
+// Configurando um template engine EJS
 app.set("views", path.join(__dirname, "src/views"));
 app.set("view engine", "ejs");
 
