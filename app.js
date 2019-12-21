@@ -4,11 +4,13 @@ const path = require("path");
 const PORT = 3000;
 const checkListRouter = require("./src/routes/checklist");
 const rooterRouter = require("./src/routes/index");
+const methodOverride = require("method-override");
 require("./config/database");
 
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 // Configurando arquivos html staticos
 app.use(express.static(path.join(__dirname, "public")));
