@@ -10,7 +10,7 @@ require("./config/database");
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride("_method"));
+app.use(methodOverride("_method", { methods: ["POST", "GET"] }));
 
 // Configurando arquivos html staticos
 app.use(express.static(path.join(__dirname, "public")));
