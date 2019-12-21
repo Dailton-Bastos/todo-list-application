@@ -23,6 +23,7 @@ app.set("view engine", "ejs");
 app.use("/", rooterRouter);
 app.use("/checklists", checkListRouter);
 app.use("/checklists", taskRouter.checklistDepedent);
+app.use("/tasks", taskRouter.simple);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta: ${PORT}`);
